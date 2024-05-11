@@ -1,7 +1,7 @@
 #include "optimization.h"
 #include <math.h>
 #include "activation.h"
-
+//this file has the optimization functions needed in the training process
 double derivative_sigmoid(double a)
 {
     return sigmoid(a)*(1-sigmoid(a));

@@ -6,6 +6,7 @@
 #define LINE 100
 #include "structures.h"
 
+//Function that appends the save file in a separate line
 void saveWeightBiasLoss(neuron* neuron,double loss){
     FILE*fp2;
     fp2=fopen("weightsbiasloss.txt","a");
@@ -13,7 +14,7 @@ void saveWeightBiasLoss(neuron* neuron,double loss){
     fclose(fp2);
 }
 
-
+//Function that reads a file and saves it into a matrix
 void read_matrix(char *filename, double ***T)
 {
     FILE *fp=NULL;

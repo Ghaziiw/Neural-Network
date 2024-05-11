@@ -6,7 +6,11 @@
 #include "Neural_Operations.h"
 #include "activation.h"
 #include <time.h>
-//Fonction qui génere un output de la neuronne d'entrée en fonction des output des neuronnes de la couche précédente
+
+
+//Forward propagation function generates the output of a neuron
+//output is equal to the sum of each weight multiplied by the corresponding input, and then we add the bias of the neuron to the sum and apply the
+//sigmoid to the result we obtained
 double  forward_propagation(neuron *neuron,double *input)
 {
     int i=0;
@@ -20,7 +24,7 @@ double  forward_propagation(neuron *neuron,double *input)
 
 }
 
-//Fonction backward propagation
+//Backward propagation calculates the error and saves the error and the corresponding weights and biases
 void backpropagation(neuron *neuron, double *input,double learning_rate)
 {
     double output = forward_propagation(neuron, input);
@@ -33,14 +37,15 @@ void backpropagation(neuron *neuron, double *input,double learning_rate)
     }
 }
 
-//Fonction qui initialise le bias et weight à une valeur aléatoire entre -1 et 1
+//Function that initializes the weights and biases
 void initialiser_neuronne(neuron *neuron)
 {
+
     for (int i = 0; i < 2; i++)
     {
-        neuron->weight[i]= 1;
+        neuron->weight[i]= (rand()/(double)RAND_MAX) * 2 - 1; //random weightss between -1 and 1
     }
-    neuron->bias = (rand()/(double)RAND_MAX) * 2 - 1;
+    neuron->bias = (rand()/(double)RAND_MAX) * 2 - 1;//random bias between -1 and 1
     neuron->output = 0;
 }
 
@@ -62,12 +67,3 @@ neuron *creer_neuronne()
     }
     return neur;
 }
-
-
-//Fonction de descente de Gradient
-/*void gradient_descent(neuron *neuronne, double learning_rate, double input[2], double y, double* updated_weights) {
-
-    for (int i = 0; i < 2; i++) {
-        updated_weights[i] = neuronne->weights[i] + learning_rate * derivative_logLoss(y, neuronne->output, input[i]);
-    }
-}*/
