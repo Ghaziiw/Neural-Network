@@ -12,11 +12,11 @@
 int main()
 {
     int i=0;
-    char ch[]="C:/Neural Network/dataset.csv";
+    char ch[]="dataset.csv";
     double** input;
     char ligne[101];
     double minimum;
-    char *ch1="C:/Neural Network/weightsbiasloss.txt";
+    char *ch1="weightsbiasloss.txt";
     input=(double**)malloc(100*sizeof(double*));
     if (input == NULL) {
         printf("Memory allocation failed");
