@@ -54,6 +54,7 @@ int main()
     free(ch1);
     free(ch);
     free(input);
+    free(neurun->weight);
     free(neuron->next);
     free(neuron->prev);
     free(neuron);
