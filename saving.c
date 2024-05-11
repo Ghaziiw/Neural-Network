@@ -213,8 +213,6 @@ void affiche_min(char *filename,char *var,double m)
     }
     printf("w1,w2 = ");
     puts(w);
-    //printf("bias = ");
-    //puts(biass);
     printf("Loss = %f",m);
     fclose(fp);
 }
