@@ -8,7 +8,7 @@
 
 void saveWeightBiasLoss(neuron* neuron,double loss){
     FILE*fp2;
-    fp2=fopen("C:/Neural Network/weightsbiasloss.txt","a");
+    fp2=fopen("weightsbiasloss.txt","a");
     fprintf(fp2,"weights=%lf,%lf/bias=%lf/loss=%lf\n",neuron->weight[0],neuron->weight[1],neuron->bias,loss) ;
     fclose(fp2);
 }
