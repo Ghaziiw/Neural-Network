@@ -49,7 +49,7 @@ void initialiser_neuronne(neuron *neuron)
     neuron->output = 0;
 }
 
-//Fonction qui crée une neuronne
+//Function to allocate memory space to a neuron and check for any errors
 neuron *creer_neuronne()
 {
     neuron *neur=NULL;
