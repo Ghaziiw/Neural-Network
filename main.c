@@ -49,8 +49,9 @@ int main()
     min(ch1,&minimum,&ligne);
     printf(" le minimum est :%f\n",minimum);
     affiche_min(ch1,&ligne,minimum);
-
+    remp_excel(ch1,ch2);
     //freeing used pointers
+    free(ch2);
     free(ch1);
     free(ch);
     free(input);
