@@ -213,40 +213,12 @@ void affiche_min(char *filename,char *var,double m)
     }
     printf("w1,w2 = ");
     puts(w);
+    //printf("bias = ");
+    //puts(biass);
     printf("Loss = %f",m);
     fclose(fp);
 }
 
 
 
-void remp_excel (char *filename ,char *filename1)
-{
-    FILE *fp=fopen(filename,"r");
-    if(fp==NULL)
-    {
-        printf("ERREUR lors de l'ouverture du fichier");
-    }
-    FILE *fd=fopen(filename1,"w");
-    if(fd==NULL)
-    {
-        printf("ERREUR lors de l'ouverture du fichier");
-    }
-    char var[101];
-
-    while(fgets(var,100,fp))
-    {
-        char loss[101]="\0";
-        int j=trouver(var,filename);
-        int k=0;
-        while ((isdigit(var[j]) || var[j] == '.' || var[j] == '-' || var[j] == ',') && var[j] != '\0')
-        {
-            loss[k] = var[j];
-            k++;
-            j++;
-        }
-        fprintf(fd,"%s\n",loss);
-    }
-    fclose(fp);
-    fclose(fd);
-}
 

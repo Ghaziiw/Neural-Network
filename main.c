@@ -14,7 +14,7 @@ int main()
 {
     //declarations and initiazations
     int i=0;
-    char ch[]="dataset.csv",ch1[]="weightsbiasloss.txt",ch2[]="loss.csv";
+    char ch[]="dataset.csv",ch1[]="weightsbiasloss.txt";
     double** input;
     char ligne[101];
     double minimum;
@@ -49,13 +49,11 @@ int main()
     min(ch1,&minimum,&ligne);
     printf(" le minimum est :%f\n",minimum);
     affiche_min(ch1,&ligne,minimum);
-    remp_excel(ch1,ch2);
 
     //freeing used pointers
     free(ch1);
     free(ch);
     free(input);
-    free(neuron->weight);
     free(neuron->next);
     free(neuron->prev);
     free(neuron);
