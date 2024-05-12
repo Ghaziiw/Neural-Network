@@ -244,7 +244,7 @@ void remp_excel (char *filename ,char *filename1)
             k++;
             j++;
         }
-        fprintf(fd,"%s ;",loss);
+        fprintf(fd,"%s\n",loss);
     }
     fclose(fp);
     fclose(fd);
