@@ -9,6 +9,7 @@
 #include "optimization.h"
 #include "loss.h"
 #include "saving.h"
+#include "free.h"
 int main()
 {
     //declarations and initiazations

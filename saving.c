@@ -10,10 +10,6 @@
 void saveWeightBiasLoss(neuron* neuron,double loss){
     FILE*fp2;
     fp2=fopen("weightsbiasloss.txt","a");
-    if (fp2 == NULL) {
-        printf("Erreur lors de l'ouverture du fichier\n");
-        return;
-    }
     fprintf(fp2,"weights=%lf,%lf/bias=%lf/loss=%lf\n",neuron->weight[0],neuron->weight[1],neuron->bias,loss) ;
     fclose(fp2);
 }
